@@ -26,15 +26,15 @@ What evidence supports the choice? Distinguish source evidence from founder infe
 
 ### Positive
 
-- 
+-
 
 ### Negative
 
-- 
+-
 
 ## Risks and mitigations
 
-- 
+-
 
 ## Review trigger
 

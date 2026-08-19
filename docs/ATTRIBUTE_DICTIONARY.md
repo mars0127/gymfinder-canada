@@ -1,6 +1,6 @@
 # Candidate Attribute Dictionary
 
-**Status:** Candidate set for the ten-gym audit. This is not the final database schema.
+**Status:** Candidate set for the five-gym planning calibration. This is not the final database schema or final public filter list.
 
 ## Data-state rule
 

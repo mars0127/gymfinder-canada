@@ -1,133 +1,223 @@
-# Next Steps to Formal Project Planning
+# Build-Ready Planning Roadmap
 
-This is the shortest responsible path from the current repository to a build-ready project plan.
+## Current status
 
-## Principle
+**Project status: `PLANNING`**
 
-Do not perform research because startup processes say that research should occur. Every activity must answer a decision that would otherwise remain uncertain.
+The objective is to produce a coherent, build-ready plan without making external user interviews, gym-operator contact, or broad market research prerequisites.
 
-Gym-operator outreach is not on the critical path. Formal interviews are not on the critical path.
+## Stage 1 — Governance and workspace alignment
 
-## Step 1 — Founders align on the repository decisions
+**Status: complete when the Stage 1 governance patch is merged.**
 
-Both founders review:
+Outputs:
 
-- `PROJECT_BRIEF.md`;
-- `MVP_SCOPE.md`;
-- `DECISIONS.md`;
-- `SOURCE_POLICY.md`;
-- `VERIFICATION_POLICY.md`.
+- shared agent policy;
+- peer Codex/Claude implementation model;
+- ChatGPT/Codex planning control layer;
+- risk-triggered review policy;
+- Figma design workflow;
+- revised decisions and ADRs;
+- planning templates and backlog;
+- explicit deferral of external user testing;
+- five-gym calibration instead of a ten-gym audit gate.
 
-Any disagreement becomes a comment on the first alignment issue. Resolve it through a decision update, not through separate AI chats.
+No production application code belongs in Stage 1.
 
-**Output:** accepted provisional brief and assigned research ownership.
+## Stage 2 — Competitor UX pattern audit
 
-## Step 2 — Run a fast ten-gym data audit
+Study direct and adjacent products to identify useful patterns for:
 
-Choose ten deliberately varied Toronto facilities:
+- landing and location entry;
+- filter organization;
+- must-have versus preferred requirements;
+- list and map behavior;
+- result-card hierarchy;
+- comparison;
+- gym-profile structure;
+- equipment presentation;
+- verification, freshness, and unknown states;
+- contribution and correction flows;
+- account timing;
+- mobile and accessibility behavior.
 
-- chain locations;
-- independent strength/bodybuilding gyms;
-- municipal facilities;
-- one or two locations with poor public information.
+For every observed pattern, record:
 
-For each location, attempt to resolve the P0 fields in `ATTRIBUTE_DICTIONARY.md` and record:
+- source product and retrieval date;
+- the user problem it addresses;
+- strengths and weaknesses;
+- `adopt`, `adapt`, `reject`, or `defer`;
+- GymFinder-specific reasoning.
+
+**Output:** `docs/COMPETITOR_UX_PATTERN_AUDIT.md` completed with supporting research notes and a corresponding Figma pattern page.
+
+## Stage 3 — Product Requirements Document
+
+Create the PRD using accepted decisions, founder direction, competitor patterns, source policy, and verification policy.
+
+The PRD must define:
+
+- problem and target user;
+- jobs and core use cases;
+- functional requirements;
+- must-have and preferred matching behavior;
+- treatment of unknown facts;
+- results, comparison, and profile requirements;
+- correction and moderation flow;
+- account timing;
+- non-goals;
+- pilot success, pause, and revision criteria;
+- assumptions not yet validated by live usage.
+
+**Output:** accepted PRD v1.
+
+## Stage 4 — Figma information architecture and product design
+
+Use `docs/UI_UX_FIGMA_WORKFLOW.md`.
+
+Create:
+
+1. file cover and current decisions;
+2. competitor-pattern page;
+3. information architecture;
+4. critical user flows;
+5. low-fidelity mobile and desktop wireframes;
+6. design foundations;
+7. initial reusable components;
+8. high-fidelity critical screens;
+9. clickable critical-path prototype;
+10. developer-handoff annotations.
+
+Critical paths:
+
+- enter location and requirements;
+- view explainable results;
+- compare gyms;
+- view a gym profile and fact evidence;
+- submit a structured confirmation or correction;
+- view pending or disputed states.
+
+**Output:** accepted Figma design baseline.
+
+## Stage 5 — Five-gym data calibration, in parallel
+
+Select five varied Toronto facilities and attempt to resolve the candidate P0 fields without operator contact.
+
+Record for each fact:
 
 - value;
-- source;
-- observation/retrieval date;
+- present, absent, or unknown;
+- source and date;
 - confidence;
-- time or difficulty;
-- conflicts;
-- whether direct contact would be required.
+- contradictions;
+- maintenance difficulty.
 
-Start with ten, not twenty. Expand to twenty only when the first ten produce contradictory results or do not cover enough facility types.
+The calibration should answer:
 
-**Decision unlocked:** whether the data is obtainable and which attributes belong in the MVP.
+- which identity source is most usable;
+- which fields are realistically obtainable;
+- which fields should be required, optional, or removed;
+- how source records and canonical gyms should be separated;
+- what completeness threshold is credible;
+- how frequently facts may need review.
 
-## Step 3 — Test the selection task, not enthusiasm for the idea
+**Output:** five records plus a data-feasibility synthesis. Expand only if the first five are insufficiently varied.
 
-Do not conduct generic interviews asking whether people “would use” the product.
+## Stage 6 — Data, trust, and technical architecture
 
-Use the cheapest credible evidence available, in this order:
+### Data and trust
 
-1. Each founder independently reconstructs a recent or realistic gym-selection task and documents missing information.
-2. Review public discussions to identify recurring decision criteria; use them as research evidence only, not as product data.
-3. Ask three to five accessible gym users to complete an actual comparison task using the audited profiles or a simple mock-up.
-4. Conduct a focused conversation only when a specific unresolved decision remains.
+Define:
 
-A useful task test asks the participant to choose among gyms under real constraints and explain what information changed the decision. It does not ask for a favourable opinion of the concept.
+- canonical gym identity;
+- source records and licensing metadata;
+- equipment taxonomy;
+- gym facts and fact states;
+- evidence and observation dates;
+- freshness;
+- corrections, disputes, and moderation history;
+- user and future staff relationships;
+- completeness calculations.
 
-**Decision unlocked:** which filters and comparisons are decision-critical.
+### Technical architecture
 
-## Step 4 — Create a narrow data-model spike
+Define:
 
-The spike must prove that the system can represent:
-
-- canonical gyms and source records separately;
-- equipment types, manufacturers, models, and quantities;
-- `present`, `absent`, and `unknown`;
-- provenance and observation dates;
-- proposed corrections without overwriting approved facts;
-- conflicts and verification events;
-- must-have matching with an explanation of unmet requirements.
-
-The spike does not need final UI, production authentication, rewards, payments, or a staff dashboard.
-
-**Decision unlocked:** whether the provisional stack and schema can support the product correctly.
-
-## Step 5 — Freeze planning decisions
-
-Use the evidence from Steps 2–4 to resolve the open decisions in `DECISIONS.md`:
-
-- seed source;
-- Toronto seed area;
-- P0 attributes;
-- equipment taxonomy depth;
-- completeness threshold;
-- map requirement;
-- evidence-photo policy;
+- framework and repository structure;
+- Supabase boundaries and alternatives;
+- server/client responsibilities;
 - authentication timing;
-- final MVP boundaries.
+- deterministic matching and query flow;
+- storage and evidence-photo policy;
+- caching, mapping, deployment, and near-zero-cost limits;
+- security, privacy, accessibility, observability, and backups;
+- test strategy.
 
-Anything not resolved is explicitly deferred.
+Use a bounded spike only when documentation and small fixtures cannot resolve a material question.
 
-## Step 6 — Produce the formal planning package
+**Output:** accepted data model, architecture, security baseline, and test strategy.
 
-The build-ready plan will contain:
+## Stage 7 — Planning integration and freeze
 
-1. Product Requirements Document.
-2. Frozen MVP scope.
-3. User flows and low-fidelity wireframes.
-4. Data model and data dictionary.
-5. Verification and moderation policy.
-6. Technical architecture.
-7. Security and privacy baseline.
-8. Test strategy.
-9. Ordered implementation backlog with acceptance criteria.
-10. Pilot launch and measurement plan.
+Reconcile the PRD, Figma, source policy, verification policy, schema, and technical architecture.
 
-## Planning-readiness gate
+Resolve contradictions such as:
 
-Formal planning can be finalized when all of the following are true:
+- Figma allowing direct edits while policy requires moderation;
+- UI treating unknown as absent;
+- comparison screens requiring fields the schema cannot support;
+- PRD requiring data the five-gym calibration could not obtain;
+- client-side behavior that bypasses server or RLS enforcement.
 
-- [ ] Both founders accept the project brief and MVP boundaries.
-- [ ] A ten-gym audit has tested the proposed source and attribute model.
-- [ ] The founders can identify the high-value attributes that are realistically maintainable.
-- [ ] At least one real or realistic gym-selection task has been completed using the structured data.
-- [ ] Additional task tests have been performed only where uncertainty required them.
-- [ ] The data-model spike represents provenance, uncertainty, corrections, and conflicts.
-- [ ] Open decisions affecting architecture are accepted or explicitly deferred.
-- [ ] Gym-operator participation is not assumed in any critical path.
+Resolve or explicitly defer every open decision that affects implementation.
 
-## Explicitly unnecessary before planning
+**Output:** frozen build-ready planning package.
 
-- gym partnerships;
-- operator interviews;
-- a survey with a large sample;
+## Stage 8 — Implementation backlog and planning closeout
+
+Create dependency-ordered epics and issues for:
+
+1. repository and application foundation;
+2. canonical gym and fact model;
+3. seed data and administration;
+4. deterministic search and matching;
+5. results and comparison;
+6. gym profile;
+7. authentication;
+8. structured corrections;
+9. moderation;
+10. verification and freshness;
+11. accessibility and responsive design;
+12. deployment and pilot readiness.
+
+Each issue must include an owner, primary agent, mode, branch, dependencies, acceptance evidence, permissions, and review trigger.
+
+Create a planning closeout/recovery capsule before authorizing production implementation.
+
+## Build-ready gate
+
+Implementation may be authorized when:
+
+- [ ] Stage 1 governance is merged.
+- [ ] Competitor-pattern audit is complete.
+- [ ] PRD v1 is accepted.
+- [ ] Figma information architecture, critical flows, and design baseline are accepted.
+- [ ] Five-gym calibration has informed P0 fields and source strategy.
+- [ ] Data model and equipment taxonomy are accepted.
+- [ ] Technical architecture and security/privacy baseline are accepted.
+- [ ] Verification and moderation rules align across requirements, Figma, and schema.
+- [ ] Implementation backlog is dependency ordered.
+- [ ] Pilot measurement and pause criteria are defined.
+- [ ] Open implementation-affecting decisions are accepted or deferred.
+
+## Explicitly unnecessary before implementation planning is complete
+
+- external user interviews or surveys;
+- usability testing;
+- gym partnerships or operator contact;
+- trial-code commitments;
 - payment validation;
-- a logo or final name;
-- a domain;
-- 50 completed gym profiles;
-- Canada-wide market research;
+- a final name, logo, or domain;
+- 30–50 completed profiles;
+- Canada-wide research;
 - production deployment.

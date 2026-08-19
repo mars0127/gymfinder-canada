@@ -1,74 +1,63 @@
-# Publish This Repository to GitHub
+# GitHub Access and Local Setup
 
-The repository is prepared as a local Git repository with an initial commit. Publish it as a **private** repository first.
+Repository: `https://github.com/mars0127/gymfinder-canada`
 
-## Recommended repository settings
+## Repository visibility
 
-- **Owner:** `mars0127`
-- **Repository name:** `gymfinder-canada`
-- **Visibility:** Private
-- **Description:** `Toronto-first gym discovery and comparison platform focused on exact equipment and verifiable facility data.`
-- **Issues:** Enabled
-- **Discussions:** Disabled initially
-- **Wiki:** Disabled initially
-- **License:** None until the founders make a deliberate IP/open-source decision
+The accepted decision is to keep the repository private and unlicensed during planning and initial implementation.
 
-## Option A — GitHub Desktop
+Verify in GitHub:
 
-1. Extract the downloaded repository folder.
-2. Open GitHub Desktop.
-3. Select **File → Add Local Repository**.
-4. Choose the extracted `gymfinder-canada` folder.
-5. Select **Publish repository**.
-6. Use the recommended name and description above.
-7. Keep **Keep this code private** selected.
-8. Publish the repository.
+1. Open **Settings → General**.
+2. Confirm repository visibility is **Private**.
+3. Confirm no public licence has been added.
 
-## Option B — Git command line
-
-First create an empty private repository named `gymfinder-canada` on GitHub. Do **not** initialize it with a README, `.gitignore`, or licence because those files already exist locally.
-
-Then run:
-
-```bash
-cd path/to/gymfinder-canada
-git remote add origin https://github.com/mars0127/gymfinder-canada.git
-git push -u origin main
-```
-
-When using GitHub CLI instead:
-
-```bash
-gh auth login
-gh repo create gymfinder-canada --private --source . --remote origin --push
-```
+Changing a previously public repository to private does not undo prior public exposure, so secrets must never be committed regardless of visibility.
 
 ## Invite the second founder
 
-On GitHub:
+1. Open **Settings → Collaborators and teams**.
+2. Invite the second founder's GitHub account.
+3. Confirm they can clone, create branches, and open pull requests.
+4. Update `docs/COLLABORATION.md` with their username.
 
-1. Open the repository.
-2. Open **Settings**.
-3. Open **Collaborators** or **Collaborators and teams**.
-4. Add the partner's exact GitHub username.
-5. Ask the partner to accept the invitation.
-6. Record both usernames in `docs/COLLABORATION.md` through a small pull request.
+## Grant the ChatGPT GitHub connection access when repository inspection is desired
 
-## Branch and review setup
+A private repository must be included in the GitHub App or connector installation used by ChatGPT. Otherwise repository reads may return `404` even when the URL is correct.
 
-Use pull requests immediately, even while the repository is private.
+In GitHub, review the installed application's repository access and include `mars0127/gymfinder-canada`. Grant only the minimum access required for the intended workflow.
 
-Recommended starting rule:
+## Clone with GitHub Desktop
 
-- Never commit substantial work directly to `main`.
-- Use one branch per issue.
-- Let the other founder review high-risk changes involving scope, data sources, schema, authentication, authorization, or deployment.
-- Do not make mandatory approval rules so strict that both founders become blocked while access and workflows are still being learned. Tighten repository rules after the first few successful pull requests.
+1. Open GitHub Desktop.
+2. Select **File → Clone repository**.
+3. Choose `mars0127/gymfinder-canada`.
+4. Select a local folder.
+5. Confirm the current branch and commit before editing.
 
-## First shared actions
+## Branch and pull-request workflow
 
-1. Both founders read `docs/PROJECT_BRIEF.md`, `docs/MVP_SCOPE.md`, and `docs/DECISIONS.md`.
-2. Open the issues in `docs/INITIAL_BACKLOG.md`.
-3. Each founder comments on Issue 1 with any disagreement or missing constraint.
-4. Resolve disagreements in the decision log before implementation begins.
-5. Do not commit API keys, `.env` files, private participant information, or unlicensed gym images.
+1. Create one branch per issue.
+2. Do not let two agents edit the same branch simultaneously.
+3. Commit coherent changes.
+4. Push the branch only when authorized.
+5. Open a focused pull request using the repository template.
+6. Merge only after acceptance evidence and any required review are complete.
+
+Use `CONTRIBUTING.md` and `docs/AI_AGENT_WORKFLOW.md` for details.
+
+## Local configuration
+
+After application code exists, local secrets will belong in ignored environment files such as `.env.local`. Never commit actual credentials. Commit only safe example files such as `.env.example` with placeholder values.
+
+## Recovery check
+
+Before a consequential agent run, capture:
+
+```bash
+git branch --show-current
+git rev-parse HEAD
+git status --short
+```
+
+An unexpected branch, commit, or dirty state should cause a stop rather than an automatic reset, stash, clean, or checkout.

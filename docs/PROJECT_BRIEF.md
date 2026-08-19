@@ -6,9 +6,11 @@
 
 The name is provisional. The initial product scope is Toronto, not Canada-wide coverage.
 
-## Project stage
+## Project status
 
-Discovery and pre-planning.
+**PLANNING**
+
+Production implementation is not authorized until the build-ready planning package is accepted.
 
 ## Problem
 
@@ -29,6 +31,8 @@ It is frequently incomplete, location-insensitive, stale, or difficult to compar
 ## Product hypothesis
 
 A Toronto-focused product can help strength-training users make better gym decisions by presenting structured, comparable gym facts with visible provenance, observation dates, and verification status.
+
+This remains a product hypothesis until later pilot evidence is available.
 
 The central loop is:
 
@@ -71,8 +75,8 @@ The product should answer questions such as:
 - Which nearby gyms have a pendulum squat?
 - Which locations have Prime or Atlantis equipment?
 - Which gyms offer both several racks and a day pass?
-- Which gym meets four of five requirements, and which requirement is missing?
-- When was a fact last observed, and who or what supports it?
+- Which gym meets four of five requirements, and which requirement is missing or unknown?
+- When was a fact last observed, and what evidence supports it?
 
 ## Product principles
 
@@ -82,7 +86,7 @@ Thirty complete profiles are more useful than thousands of empty shells.
 
 ### 2. Unknown is not no
 
-Missing information must remain `unknown`; it cannot silently become `absent`.
+Missing information remains `unknown`; it cannot silently become `absent`.
 
 ### 3. Facts before opinions
 
@@ -94,7 +98,7 @@ Every important fact should retain its source, observation date, and verificatio
 
 ### 5. Transparent matching
 
-Results must explain which requirements matched and which did not. Avoid unexplained AI-generated scores.
+Results must explain which requirements matched, failed, or remain unknown. Avoid unexplained AI-generated scores.
 
 ### 6. Human-reviewable changes
 
@@ -102,11 +106,15 @@ Crowdsourced submissions propose changes; they do not immediately overwrite appr
 
 ### 7. Privacy and accessibility by design
 
-Do not store unnecessary location histories or participant identities. The list experience must remain usable without relying on a map.
+Do not store unnecessary location histories or identities. The list experience must remain usable without relying on a map.
 
-### 8. Near-zero-cost validation
+### 8. Near-zero-cost MVP
 
-Avoid paid infrastructure or commercial data dependencies before the product demonstrates utility.
+Avoid paid infrastructure or commercial data dependencies until real usage justifies them.
+
+### 9. Pattern-informed, independently designed
+
+Use comparable products to learn interaction patterns, but create GymFinder's own product decisions, visual system, copy, and implementation.
 
 ## Provisional MVP outcome
 
@@ -135,13 +143,17 @@ The MVP is not:
 - a native mobile application;
 - dependent on gym-operator participation.
 
-## Planning evidence required
+## Build-ready planning inputs
 
-Formal implementation planning can proceed after the founders have:
+Before production implementation is authorized, the founders will accept:
 
-1. tested data acquisition on a small, varied Toronto gym sample;
-2. identified a realistic high-value attribute set;
-3. tested whether actual gym-choice tasks benefit from those attributes;
-4. proven that the proposed data model can represent provenance, uncertainty, corrections, and conflicts.
+1. competitor UX pattern audit;
+2. PRD v1;
+3. Figma information architecture, flows, design baseline, and handoff;
+4. five-gym data-feasibility calibration;
+5. data model and equipment taxonomy;
+6. technical architecture, security/privacy baseline, and test strategy;
+7. dependency-ordered implementation backlog;
+8. planning closeout and explicit implementation decision.
 
-Gym-operator interviews or partnerships are not required before planning.
+External user interviews, surveys, usability tests, gym partnerships, and operator contact are not required for the initial build-ready plan. They may be reconsidered after a prototype or alpha produces concrete questions.

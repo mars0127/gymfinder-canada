@@ -1,4 +1,6 @@
-# Gym-Selection Task Test
+# Deferred Prototype/Alpha Gym-Selection Task Test
+
+> **Current status:** Not required during build-ready planning. Use only after a prototype/alpha or when a founder explicitly reopens a named decision.
 
 - **Participant code:**
 - **Date:**
@@ -16,19 +18,19 @@ Describe the real need or scenario.
 
 ### Must-have
 
-- 
+-
 
 ### Nice-to-have
 
-- 
+-
 
 ### Travel/access constraint
 
-- 
+-
 
 ### Budget constraint
 
-- 
+-
 
 ## Observations
 
