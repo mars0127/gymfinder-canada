@@ -1,155 +1,198 @@
-# Initial Backlog
+# Initial Planning Backlog
 
-Create these as GitHub issues after the repository is published.
+Create these as GitHub issues after the Stage 1 governance patch is merged. The current phase uses ChatGPT and/or Codex for planning. Codex and Claude become peer agents after implementation is authorized.
 
-## Issue 1 — Confirm founder alignment and repository ownership
+## Issue 1 — Merge Stage 1 governance and workspace alignment
 
 **Type:** Documentation / decision
 
 ### Objective
 
-Ensure both founders are working from the same product brief and decision log.
+Make the repository accurately represent the accepted planning, agent, Figma, and evidence workflow.
 
 ### Acceptance criteria
 
-- [ ] Second founder has repository access.
-- [ ] Both founders have reviewed the project brief, MVP scope, and decisions.
-- [ ] Disagreements are documented as comments.
-- [ ] Accepted changes are merged through a pull request.
-- [ ] `COLLABORATION.md` contains both GitHub usernames.
+- [ ] `AGENTS.md` contains the shared policy.
+- [ ] `CLAUDE.md` no longer restricts Claude to review.
+- [ ] Peer-agent and planning-control decisions are recorded.
+- [ ] Figma workflow is recorded.
+- [ ] External user testing is removed from the planning gate.
+- [ ] Five-gym calibration replaces the ten-gym audit requirement.
+- [ ] Planning templates and roadmap are present.
+- [ ] Repository access for both founders is confirmed.
+- [ ] Private-repository access is granted to the GitHub integration used for later inspections, when desired.
 
 ### Exclusions
 
-- No application code.
-- No branding work.
+- No production application code.
+- No competitor audit execution.
+- No Figma screen creation.
 
 ---
 
-## Issue 2 — Select the ten-gym audit sample
+## Issue 2 — Complete the competitor UX pattern audit
 
-**Type:** Research
+**Type:** Planning research / UX
 
 ### Objective
 
-Choose a varied Toronto sample that exposes data-source and attribute problems.
+Extract reusable discovery, filtering, comparison, profile, trust, and correction patterns from direct and adjacent products.
 
 ### Acceptance criteria
 
-- [ ] Sample contains chain, independent strength, and municipal facilities.
-- [ ] Sample includes North York and at least one other Toronto area.
-- [ ] Sample includes at least one location with limited public information.
-- [ ] Selection rationale is documented.
-- [ ] No gym requires operator participation to remain in the sample.
+- [ ] Candidate products and exact flows are recorded.
+- [ ] Sources and retrieval dates are present.
+- [ ] Each pattern has strengths and weaknesses.
+- [ ] Each pattern receives `adopt`, `adapt`, `reject`, or `defer`.
+- [ ] No proprietary branding, copy, assets, or full layouts are copied.
+- [ ] Findings are reflected on the Figma competitor-pattern page.
+- [ ] Final synthesis identifies the recommended GymFinder interaction model.
 
 ---
 
-## Issue 3 — Complete the ten-gym source and attribute audit
+## Issue 3 — Draft and accept PRD v1
 
-**Type:** Research
+**Type:** Product planning
 
 ### Objective
 
-Determine which P0 facts can be obtained, sourced, and maintained responsibly.
+Convert accepted decisions and competitor-pattern findings into a complete MVP product contract.
 
 ### Acceptance criteria
 
-- [ ] Each gym has a completed audit record.
+- [ ] Target user, problem, jobs, and use cases are defined.
+- [ ] Functional requirements and non-goals are explicit.
+- [ ] Must-have versus preferred matching is defined.
+- [ ] Unknown-state behavior is defined.
+- [ ] Search, results, comparison, profile, correction, and moderation requirements are defined.
+- [ ] Assumptions unvalidated by live use are listed.
+- [ ] Pilot success, pause, and revision criteria are defined.
+- [ ] Founders accept PRD v1.
+
+---
+
+## Issue 4 — Create the Figma planning and design baseline
+
+**Type:** Product design
+
+### Objective
+
+Create the information architecture, critical flows, wireframes, foundations, components, high-fidelity screens, prototype, and handoff baseline.
+
+### Acceptance criteria
+
+- [ ] Figma project/file access is configured.
+- [ ] Required pages follow `UI_UX_FIGMA_WORKFLOW.md`.
+- [ ] Information architecture is complete.
+- [ ] Critical flows are complete.
+- [ ] Mobile and desktop low-fidelity wireframes are complete.
+- [ ] Unknown, stale, disputed, loading, empty, and error states are covered.
+- [ ] Design foundations and initial components are defined.
+- [ ] Critical high-fidelity screens and prototype are accepted.
+- [ ] Handoff annotations link to relevant requirements.
+
+---
+
+## Issue 5 — Complete the five-gym data calibration
+
+**Type:** Data planning research
+
+### Objective
+
+Ensure the P0 fields, source strategy, and schema reflect obtainable real-world data.
+
+### Acceptance criteria
+
+- [ ] Five varied Toronto facilities are included.
 - [ ] Present, absent, and unknown are distinct.
 - [ ] Every populated fact has a source and date.
-- [ ] Contradictions and duplicates are recorded.
-- [ ] Effort/difficulty is recorded.
-- [ ] Audit concludes which attributes should remain P0, move to P1, or be removed.
-- [ ] Audit recommends a provisional canonical seed source.
+- [ ] Contradictions, duplicates, and closure uncertainty are recorded.
+- [ ] Collection and maintenance difficulty are recorded.
+- [ ] Operator contact is not required.
+- [ ] Required, optional, and deferred attributes are recommended.
+- [ ] A provisional canonical-source strategy is recommended.
 
 ---
 
-## Issue 4 — Validate the gym-selection task
+## Issue 6 — Define the data model and trust architecture
 
-**Type:** Research / UX
-
-### Objective
-
-Determine whether structured equipment and facility facts materially improve a real gym choice.
-
-### Acceptance criteria
-
-- [ ] Both founders complete an independent realistic selection task.
-- [ ] Public problem evidence is summarized without becoming product data.
-- [ ] Any remaining decision uncertainty is named.
-- [ ] Up to three to five task tests are run only if needed.
-- [ ] Final recommendation lists the most decision-critical attributes.
-
-### Exclusions
-
-- No generic “would you use this?” interview quota.
-- No requirement to recruit strangers.
-
----
-
-## Issue 5 — Build the data-model spike
-
-**Type:** Technical discovery
+**Type:** Data / architecture planning
 
 ### Objective
 
-Prove that the proposed model can represent gym identity, sources, facts, equipment, uncertainty, corrections, conflicts, and matching.
+Define gym identity, source records, equipment, facts, evidence, freshness, corrections, disputes, moderation, and completeness.
 
 ### Acceptance criteria
 
-- [ ] Canonical gyms are separate from source records.
-- [ ] Equipment type, manufacturer, model, and quantity can be represented.
+- [ ] Canonical gyms and source records are separate.
+- [ ] Equipment type, manufacturer, model, loading type, and quantity can be represented.
 - [ ] Present, absent, and unknown are distinct.
-- [ ] Approved facts retain provenance and dates.
-- [ ] Corrections do not overwrite history.
-- [ ] Conflicts can be represented.
-- [ ] At least five representative filter queries work against fixtures.
-- [ ] The spike documents whether the provisional stack remains suitable.
-
-### Exclusions
-
-- No production UI.
-- No staff dashboard.
-- No payments or rewards.
+- [ ] Provenance and dates are retained.
+- [ ] Corrections preserve history.
+- [ ] Conflicts and disputes are representable.
+- [ ] Freshness and completeness are defined.
+- [ ] Representative matching queries can be expressed.
+- [ ] A bounded spike is used only if necessary.
 
 ---
 
-## Issue 6 — Freeze the MVP decisions
+## Issue 7 — Define technical architecture, security, privacy, and testing
 
-**Type:** Decision
+**Type:** Technical planning
 
 ### Objective
 
-Convert audit, task, and spike evidence into accepted planning inputs.
+Create a buildable near-zero-cost architecture with explicit trust and operational boundaries.
 
 ### Acceptance criteria
 
-- [ ] Open decisions O-001 through O-008 are resolved or explicitly deferred.
+- [ ] Framework and repository structure are defined.
+- [ ] Supabase and hosting assumptions are verified through current primary sources.
+- [ ] Server/client and RLS boundaries are defined.
+- [ ] Authentication timing is decided.
+- [ ] Mapping, storage, caching, deployment, and backup approaches are defined.
+- [ ] Security and privacy baseline is complete.
+- [ ] Accessibility requirements are complete.
+- [ ] Test and evidence strategy is complete.
+- [ ] Paid dependencies and free-tier assumptions are documented.
+
+---
+
+## Issue 8 — Integrate and freeze the build-ready planning package
+
+**Type:** Planning integration / decision
+
+### Objective
+
+Reconcile the PRD, Figma, data model, verification policy, and technical architecture.
+
+### Acceptance criteria
+
+- [ ] Cross-document contradictions are resolved.
+- [ ] Open decisions O-001 through O-008 are accepted or explicitly deferred.
 - [ ] P0 attributes and completeness threshold are accepted.
 - [ ] Seed-source strategy is accepted.
-- [ ] Map requirement is accepted or rejected.
+- [ ] Map requirement is accepted or deferred.
 - [ ] Evidence-photo policy is accepted or deferred.
-- [ ] MVP scope is updated.
+- [ ] MVP scope is frozen.
 - [ ] Relevant ADRs are added or superseded.
 
 ---
 
-## Issue 7 — Produce the build-ready project plan
+## Issue 9 — Create implementation backlog and planning closeout
 
-**Type:** Planning
+**Type:** Delivery planning
 
 ### Objective
 
-Create the PRD, UX flows, architecture, schema, security baseline, test plan, and ordered implementation backlog.
+Produce dependency-ordered implementation issues and a durable recovery capsule.
 
 ### Acceptance criteria
 
-- [ ] Product Requirements Document completed.
-- [ ] MVP scope frozen.
-- [ ] User flows and wireframes completed.
-- [ ] Data model and data dictionary completed.
-- [ ] Verification and moderation policy finalized.
-- [ ] Technical architecture accepted.
-- [ ] Security/privacy baseline accepted.
-- [ ] Test strategy completed.
-- [ ] Implementation issues ordered by dependency.
-- [ ] Pilot success and pause criteria defined.
+- [ ] Implementation epics are ordered by dependency.
+- [ ] Each issue includes owner, primary agent, mode, branch, dependencies, evidence, permissions, and review trigger.
+- [ ] Codex and Claude assignments remain interchangeable and task-based.
+- [ ] High-risk boundaries have independent-review plans.
+- [ ] Pilot launch and measurement plan is complete.
+- [ ] Planning closeout records the accepted checkpoint and next safe action.
+- [ ] Founders explicitly authorize or withhold implementation.

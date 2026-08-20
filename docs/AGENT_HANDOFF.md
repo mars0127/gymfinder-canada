@@ -1,16 +1,27 @@
-# Agent Handoff Context
+# Agent Handoff and Recovery Capsule
 
 Use this document when starting a new ChatGPT, Codex, Claude, or other AI session.
 
 ## Project summary
 
-GymFinder Canada is a working title for a Toronto-first gym comparison website. The initial wedge is exact strength equipment, equipment manufacturers, access conditions, and selected amenities. The product is intended to present traceable facts rather than a general review feed.
+GymFinder Canada is a working title for a Toronto-first gym comparison website. The initial wedge is exact strength equipment, equipment manufacturers, access conditions, and selected amenities. The product presents traceable, correctable facts rather than a general review feed.
 
-## Current stage
+## Current status
 
-Discovery and pre-planning. The repository contains product and research foundations, not an approved production implementation.
+**PLANNING**
 
-## Accepted constraints
+The repository contains product foundations and the Stage 1 governance system. Production implementation is not yet authorized.
+
+## Current operating model
+
+- Human founders own product direction and acceptance.
+- Pre-implementation planning is conducted primarily through ChatGPT and/or Codex.
+- Under the current owner decision, Claude enters the default workflow when implementation is authorized.
+- After implementation authorization, Codex and Claude are peer execution agents with dynamic issue-level roles.
+- Independent review is risk-triggered, not automatic or model-specific.
+- Figma is the visual design, prototyping, and handoff workspace.
+
+## Accepted product constraints
 
 - Toronto-first public scope.
 - Strength-training users are the provisional first segment.
@@ -21,49 +32,63 @@ Discovery and pre-planning. The repository contains product and research foundat
 - User submissions enter moderation.
 - Google Maps scraping and Reddit ingestion are prohibited.
 - Gym-operator participation is optional and non-blocking.
-- No payment, subscriptions, trials, paid ranking, or real-time crowding in MVP.
+- No payments, subscriptions, automated trials, paid ranking, or real-time crowding in MVP.
 - Explainable deterministic matching before AI recommendations.
-- Near-zero-cost infrastructure during validation.
+- Near-zero-cost infrastructure during MVP planning and pilot.
 
-## Validation philosophy
+## Accepted planning choices
 
-No interview quota exists. Research must answer a named decision.
+- External user interviews, surveys, and usability tests are deferred until a prototype or alpha.
+- Competitor products are used as pattern evidence, not copied designs or product-data sources.
+- A five-gym data calibration occurs during planning and does not block PRD or Figma work.
+- Production implementation begins only after the build-ready planning package is accepted.
 
-The immediate evidence path is:
+## Immediate planning path
 
-1. founders align on decisions;
-2. ten-gym source and attribute audit;
-3. task-based user evidence only where uncertainty remains;
-4. narrow data-model spike;
-5. freeze decisions;
-6. create formal project plan.
+1. Merge Stage 1 governance.
+2. Complete the competitor UX pattern audit.
+3. Draft PRD v1.
+4. Create Figma information architecture, flows, design foundations, and critical screens.
+5. Complete the five-gym data calibration in parallel.
+6. Define data/trust and technical architecture.
+7. Integrate and freeze the planning package.
+8. Create the implementation backlog and planning closeout.
+9. Obtain explicit founder implementation authorization.
 
 ## Source-of-truth order
 
 1. `docs/DECISIONS.md` and accepted ADRs.
-2. `docs/MVP_SCOPE.md`.
+2. Accepted PRD and `docs/MVP_SCOPE.md`.
 3. `docs/PROJECT_BRIEF.md`.
 4. Active issue acceptance criteria.
-5. Research outputs.
-6. Reference documents.
-7. Chat history.
+5. Approved Figma frames for visual intent.
+6. Current schema, code, migrations, and tests after implementation begins.
+7. Accepted research outputs.
+8. Reference documents.
+9. Chat history.
 
-## Instructions for an AI session
+## Instructions for a new AI context
 
-Before giving implementation guidance:
+Before giving consequential guidance:
 
-- identify the active issue;
-- read the relevant repository documents;
-- state assumptions;
+- identify the current issue and stage;
+- inspect relevant repository documents;
+- verify current Git state when repository access is available;
 - distinguish accepted decisions from suggestions;
-- do not invent gym data;
+- do not invent gym facts;
 - do not silently broaden scope;
-- do not use the attached discussion report as final requirements when it conflicts with accepted decisions.
+- do not treat the original discussion report as final requirements;
+- do not authorize production implementation while status remains `PLANNING`.
 
-When finishing a session, provide:
+When finishing a governed task, return:
 
-- decisions made;
-- files changed;
-- tests or research completed;
-- unresolved questions;
-- the next concrete issue.
+- task/run identity when used;
+- work performed;
+- files or artifacts changed;
+- evidence and limitations;
+- failures and classification;
+- scope and permission audit;
+- remaining uncertainty;
+- final repository or service state;
+- recommended next action;
+- exact final status.

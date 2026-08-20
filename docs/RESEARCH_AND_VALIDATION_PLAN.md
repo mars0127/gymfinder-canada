@@ -1,127 +1,153 @@
-# Research and Validation Plan
+# Planning Evidence and Validation Plan
 
 ## Purpose
 
-Research exists to reduce a specific decision risk. It is not a ceremony, a credibility performance, or a requirement to collect a predetermined number of interviews.
+The current objective is not to perform ceremonial customer discovery. It is to reduce specific planning risks quickly enough to produce a build-ready product, design, data, and architecture plan.
 
-Before any activity begins, complete this sentence:
+Before an evidence activity begins, complete:
 
-> We are uncertain about **[decision]**. We will gather **[evidence]**. We will choose **[option A/B]** based on **[decision rule]**.
+> We are uncertain about **[decision]**. We will gather **[evidence]**. We will choose **[option]** using **[decision rule]**.
 
-If the result cannot change a decision, do not conduct the activity.
+Do not conduct an activity that cannot change a decision.
 
-## Current decision-linked research
+## Current evidence streams
 
-| Uncertainty | Cheapest credible evidence | Decision rule | Required now? |
+| Uncertainty | Current evidence | Decision rule | Required before implementation? |
 |---|---|---|---|
-| Can core gym facts be obtained responsibly? | Ten-gym source and attribute audit. | Proceed when most P0 fields are obtainable with traceable, maintainable sources. | Yes |
-| Which equipment and amenity filters matter? | Founder tasks, public problem evidence, then 3–5 task tests only if needed. | Keep attributes that materially alter a gym choice and can be maintained. | Yes, but no formal interview quota |
-| Does the data model handle uncertainty and conflict? | Small technical spike with fixtures. | Proceed only when present/absent/unknown, provenance, corrections, and disputes remain distinct. | Yes |
-| Are gym operators willing to claim or update profiles? | Future outreach after a credible sample profile exists. | Inform later staff features; does not block user MVP. | No |
-| Will gyms offer trial codes? | Future partner experiment. | Build only after a gym voluntarily commits to a test. | No |
-| Will users contribute at scale? | Observe beta behavior after users receive value. | Add incentives only after actual contribution rates are measured. | No |
+| Which discovery and comparison patterns should GymFinder use? | Competitor UX pattern audit plus founder product judgment and accessibility heuristics. | Adopt or adapt patterns that support the accepted jobs without copying proprietary design. | Yes |
+| Can candidate gym facts be obtained and maintained responsibly? | Five-gym data-feasibility calibration. | Keep required fields only when they have a credible source and maintenance path; retain unknown where necessary. | Yes |
+| Which attributes belong in P0? | Competitor patterns, product requirements, calibration results, and founder priorities. | Include attributes that materially support the primary job and can be represented honestly. | Yes |
+| Can the model represent uncertainty, provenance, corrections, and conflicts? | Data-model design with fixtures; bounded spike only if required. | Authorize implementation only when these states remain distinct and queryable. | Yes |
+| Is an interactive map required at launch? | Competitor patterns, Figma flows, list-first design, accessibility, and cost analysis. | Include only when it materially improves the critical path and fits the near-zero-cost plan. | Yes |
+| Are users willing to contribute at scale? | Future alpha and beta behavior. | Do not add complex incentives until actual contribution behavior is observed. | No |
+| Are gym operators willing to claim profiles or offer trials? | Future outreach after a credible product exists. | Inform later business features only. | No |
 
-## Evidence ladder
+## External user testing
 
-Use the least expensive level capable of resolving the uncertainty.
+External interviews, surveys, and usability tests are deferred until a prototype or functional alpha. They are not part of the current build-ready planning gate.
 
-### Level 1 — Founder evidence
+This choice accelerates planning but leaves some assumptions unproven. The PRD and planning closeout must identify those assumptions, and the pilot must measure real search, comparison, profile, and correction behavior.
 
-- Reconstruct a real past gym-search process.
-- Attempt a new search with explicit constraints.
-- Record what could and could not be determined.
-- Compare independent founder conclusions.
+A founder may reopen one targeted test earlier only when a named product or accessibility decision cannot be resolved through existing evidence.
 
-This is not sufficient to prove broad demand, but it is sufficient to expose obvious assumptions and vocabulary problems.
+## Competitor-pattern protocol
 
-### Level 2 — Existing behavioural evidence
+Use direct and adjacent products as pattern evidence, not as product-data sources or designs to copy.
 
-Review public discussions, questions, and complaints to identify recurring decision criteria. Record:
+For each product:
 
-- the user problem;
-- what they attempted;
-- which information was missing;
-- whether exact equipment changed the decision.
+- record the product, platform, source, and retrieval date;
+- inspect the relevant flow rather than only marketing pages;
+- identify the user problem addressed;
+- describe the interaction and information pattern in neutral terms;
+- record strengths, weaknesses, and accessibility concerns;
+- choose `adopt`, `adapt`, `reject`, or `defer`;
+- explain the GymFinder-specific decision.
 
-Do not copy restricted content into the product database. Research evidence and product data are separate.
+Do not copy:
 
-### Level 3 — Task-based test
+- logos or brand colours as identity;
+- proprietary artwork or photos;
+- marketing copy;
+- user reviews or private content;
+- a complete page composition;
+- restricted product data.
 
-Ask an accessible gym user to choose among real profiles under actual constraints.
+Store sanitized notes under `research/competitor-patterns/` and synthesize them in `docs/COMPETITOR_UX_PATTERN_AUDIT.md`.
 
-Observe:
+## Five-gym data-calibration protocol
 
-- which filters they use;
-- which information they ignore;
-- what they cannot understand;
-- whether they can explain the final choice;
-- whether they trust the verification labels.
+Use five varied Toronto facilities:
 
-This can be a short informal session. It is not a formal interview.
+1. major chain;
+2. budget chain;
+3. independent strength/bodybuilding gym;
+4. municipal fitness centre;
+5. premium or multi-amenity gym.
 
-### Level 4 — Focused conversation
+Attempt only candidate P0 fields first. For every fact:
 
-Use only when a decision remains unresolved after task evidence. Ask about past behavior, not hypothetical enthusiasm.
+- preserve source type and reference;
+- distinguish observation date from retrieval date;
+- use present, absent, or unknown;
+- never infer absence from silence;
+- record contradictions;
+- record collection and maintenance difficulty;
+- identify whether operator contact would be needed, without making contact a requirement.
 
-### Level 5 — Live product evidence
+Suggested outputs:
 
-After a beta exists, usage and correction behavior become the strongest evidence:
+- five calibration records;
+- attribute-completeness matrix;
+- source comparison;
+- contradiction and duplicate notes;
+- recommended required, optional, and deferred fields;
+- provisional canonical-source strategy;
+- maintenance implications.
 
-- searches completed;
+This is a planning calibration, not a statistical audit or demand test. Expand the sample only when the first five do not cover enough source or facility variation.
+
+## Official technical research
+
+Mutable claims about frameworks, Figma features, APIs, free tiers, mapping services, Supabase, hosting, privacy rules, or platform terms must be verified through current primary sources before they become architecture assumptions.
+
+Record:
+
+- exact claim;
+- official source;
+- publication or update date when available;
+- retrieval date;
+- implication;
+- uncertainty or expiry trigger.
+
+## Technical spikes
+
+Use a spike only when a material planning decision cannot be answered through documentation, fixtures, or a small model.
+
+A spike issue must define:
+
+- question being tested;
+- scope and time boundary;
+- fixture-only or remote-service permissions;
+- promotion or disposal criteria;
+- acceptance evidence;
+- explicit non-goals.
+
+A spike is not permission to scaffold the production product.
+
+## Later live-product evidence
+
+After an alpha or beta exists, stronger evidence includes:
+
+- search completion;
+- zero-result and unknown-result searches;
+- filters used;
+- gym comparisons;
 - profile views;
-- comparisons;
 - outbound clicks;
 - accepted corrections;
 - stale facts reconfirmed;
-- failed searches caused by missing data.
+- abandoned flows;
+- accessibility findings;
+- operator claim requests.
 
-## Ten-gym audit protocol
+These observations should drive later UX, incentive, and expansion decisions.
 
-Select a mixed sample and record facts using `templates/GYM_PROFILE_AUDIT_TEMPLATE.md`.
+## Privacy and source handling
 
-For each fact:
-
-- preserve the source type and reference;
-- distinguish observation date from retrieval date;
-- do not infer `no` from missing evidence;
-- record contradictions;
-- record the effort required;
-- identify whether the value can be maintained without direct operator contact.
-
-### Suggested success indicators
-
-These are founder decision aids, not statistical claims:
-
-- reliable identity and location for at least 8 of 10 gyms;
-- approximately 80% resolution of the final candidate P0 fields across the sample;
-- no dependence on prohibited sources;
-- manageable duplicate and closure handling;
-- a realistic path to maintaining 30–50 profiles.
-
-## Task-test protocol
-
-Use `templates/USER_TASK_TEST_TEMPLATE.md`.
-
-A participant may use their own actual needs or a scenario such as:
-
-> Choose a gym accessible from North York that has a pendulum squat, several racks, a day pass, and showers. Explain which requirement matters most and what information you still need.
-
-Do not ask, “Would you use this app?” until after the task, and do not treat a positive answer as validation.
-
-## Privacy
-
-- Use participant codes, not names.
-- Do not record precise home addresses.
-- Do not commit emails or phone numbers.
-- Do not record sensitive demographic information unless it is essential to a specific accessibility decision and the participant voluntarily provides it.
-- Store any raw private notes outside the repository.
+- Do not commit participant identities, contact details, recordings, or precise private locations.
+- Do not copy restricted platform content into the repository or product dataset.
+- Do not store screenshots that expose private accounts or personal data.
+- Separate research evidence from product data.
+- Respect source attribution, licence, and deletion requirements.
 
 ## Stop rules
 
-Stop an activity when:
+Stop or narrow an evidence activity when:
 
 - the decision is already clear;
-- new observations repeat existing evidence without changing the decision;
-- the activity cannot produce reliable evidence;
+- new observations no longer change the decision;
+- the method cannot produce reliable evidence;
 - the cost exceeds the importance of the decision;
-- it requires prohibited or unstable data access.
+- it requires prohibited or unstable data access;
+- it begins turning workflow research into the product.

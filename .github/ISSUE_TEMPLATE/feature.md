@@ -1,38 +1,58 @@
 ---
 name: Feature
-description: Implement an approved product behavior
+about: Implement an approved product behavior after implementation is authorized
 title: "Feature: "
 labels: ["feature"]
 ---
 
-## User problem
+## Identity and assignment
 
-Who needs what, and why?
+- Human owner:
+- Primary agent:
+- Work mode: Implementation
+- Branch/worktree:
+- Fresh or Existing context:
+
+## User problem and outcome
+
+Who needs what, why, and what must become true?
 
 ## Accepted decision or requirement
 
-Link the relevant PRD section, decision, or ADR.
+Link the PRD section, Figma frame, decision, or ADR.
 
-## Scope
+## Binding scope
 
-- 
+- TBD
 
-## Acceptance criteria
+## Acceptance evidence
 
-- [ ] 
+- [ ]
 
 ## Exclusions
 
-- 
+- TBD
+
+## Dependencies and frozen interfaces
+
+- TBD
 
 ## Data and source impact
 
-- 
+- TBD
+
+## Figma and accessibility impact
+
+- TBD
 
 ## Security and privacy impact
 
-- 
+- TBD
 
-## Verification plan
+## Permissions
 
-How will the behavior be tested?
+State whether commit, push, PR, dependency changes, hosted-service changes, database changes, or deployment are authorized.
+
+## Review trigger
+
+Is independent review required? Why?

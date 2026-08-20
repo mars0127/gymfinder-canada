@@ -1,37 +1,61 @@
-## Related issue
+## Related issue and identity
 
 Closes #
 
+- Task/issue ID:
+- Human owner:
+- Primary agent:
+- Work mode:
+- Starting checkpoint:
+- Final status:
+
 ## Objective
 
-What problem or decision does this pull request address?
+What outcome or decision does this pull request address?
 
 ## Changes
 
-- 
+-
 
-## Acceptance-criteria verification
+## Acceptance-evidence verification
 
 - [ ] Acceptance criteria are listed in the issue.
 - [ ] Each criterion has been verified.
-- [ ] Tests or reproducible manual steps are included.
-- [ ] Documentation is updated when behavior or decisions changed.
+- [ ] Focused evidence is included.
+- [ ] Broader tests/build/type/lint evidence is included when required.
+- [ ] Figma or screenshot evidence is included when visual behavior changed.
+- [ ] Documentation and decisions are updated when behavior or authority changed.
+- [ ] Remaining uncertainty is stated.
 
-## Product and data impact
+## Product, design, and data impact
 
 - Scope impact:
+- Figma/design impact:
 - Data-source/provenance impact:
 - Verification/moderation impact:
+- Accessibility impact:
 - Privacy/security impact:
-- Cost/free-tier impact:
+- Dependency and cost/free-tier impact:
+
+## Permissions and remote effects
+
+- Commit authorized by:
+- Push/PR authorized by:
+- Hosted service, database, auth, secrets, or deployment changes:
+- Destructive actions:
+
+Use `None` where none occurred.
 
 ## Evidence
 
-What source, research observation, test, or reasoning supports this change?
+What source, planning artifact, test, output, or reasoning supports this change? State exactly what remains unproven.
 
-## Screenshots or outputs
+## Review trigger
 
-Not required for documentation-only work.
+- [ ] Independent review required.
+- [ ] Self-verification is proportionate.
+
+Reason:
 
 ## Risks and follow-up
 

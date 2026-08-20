@@ -1,9 +1,9 @@
-# Gym Profile Audit
+# Gym Data-Feasibility Calibration Record
 
 - **Internal gym ID:**
 - **Canonical name candidate:**
 - **Researcher:**
-- **Audit date:**
+- **Calibration date:**
 - **Related issue:**
 
 ## Candidate source records
@@ -58,7 +58,7 @@
 | Women-only facility/area/hours | | | | | | |
 | Personal training | | | | | | |
 
-## Audit conclusion
+## Calibration conclusion
 
 - P0 fields resolved:
 - P0 fields unresolved:
